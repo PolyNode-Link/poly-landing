@@ -13,10 +13,9 @@ createApp({
     },
     async mounted() {
         try {
-            const response = await fetch('confessions.json');
+            const response = await fetch('/confessions.json');
             this.confessions = await response.json();
             
-            // Start spawning after data is loaded
             for(let i=0; i<1; i++) {
                 setTimeout(() => this.spawn(), i * 2500);
             }
