@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+    <defs>
+        <filter id="dark-box-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="30" result="blur"/>
+            <feOffset in="blur" dx="0" dy="30" result="offsetBlur"/>
+            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
+                <feFuncA type="linear" slope="0.4"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="shadowAlpha"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="dark-text-shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+            <feOffset in="blur" dx="0" dy="5" result="offsetBlur"/>
+            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
+                <feFuncA type="linear" slope="0.3"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="shadowAlpha"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6366f1" />
+            <stop offset="50%" stop-color="#a855f7" />
+            <stop offset="100%" stop-color="#ec4899" />
+        </linearGradient>
+
+        <pattern id="header-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM85 52c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="#ffffff" fill-opacity="0.15" fill-rule="evenodd"/>
+        </pattern>
+    </defs>
+
+    <rect width="1080" height="1920" fill="#1e293b" />
+
+    <g id="header">
+        <rect width="1080" height="730" fill="url(#primary-gradient)" />
+        <rect width="1080" height="730" fill="url(#header-pattern)" />
+    </g>
+
+    <text x="540" y="320" font-family="sans-serif" font-size="115" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-3" filter="url(#dark-text-shadow)">
+        {{header}}
+    </text>
+    
+    <g id="pill" transform="translate(540, 420)">
+        <rect x="-175" y="-38" width="350" height="76" rx="38" fill="#000000" fill-opacity="0.25" />
+        <text x="0" y="5" font-family="monospace" font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">
+            {{pill}}
+        </text>
+    </g>
+
+    <path d="M 0 720 A 90 90 0 0 1 90 630 L 990 630 A 90 90 0 0 1 1080 720 L 1080 1920 L 0 1920 Z" fill="#1e293b" />
+
+    <g id="message-box" transform="translate(65, 825)" filter="url(#dark-box-shadow)">
+        <rect width="950" height="750" rx="60" fill="#0f172a" stroke="#ffffff" stroke-opacity="0.03" stroke-width="2" />
+        
+        <text x="475" y="375" font-family="sans-serif" font-size="64" font-weight="700" fill="#f8fafc" text-anchor="middle" dominant-baseline="middle">
+            {{message}}
+        </text>
+    </g>
+</svg>
