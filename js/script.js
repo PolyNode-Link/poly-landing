@@ -14,9 +14,7 @@ createApp({
         }
     },
     mounted() {
-        
         this.generateAbstractNodes();
-        
         this.calculateTime();
         this.interval = setInterval(this.calculateTime, 1000);
     },

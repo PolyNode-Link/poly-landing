@@ -29,7 +29,7 @@
     <meta property="twitter:description" content="Redefining the bridge between bits and atoms. Something is taking shape in the void.">
     <meta property="twitter:image" content="https://polynode.link/assets/og-image.jpeg">
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -54,7 +54,6 @@
 
     <div id="app" class="relative min-h-screen flex flex-col items-center justify-between p-4 sm:p-6 overflow-hidden">
 
-        <!-- Abstract Geometric Narrative Background -->
         <div class="fixed inset-0 pointer-events-none z-0">
             <div v-for="node in floatingNodes" :key="node.id" 
                  class="absolute rounded-full mix-blend-screen filter blur-3xl opacity-20 floating-node"
@@ -69,7 +68,6 @@
                  }">
             </div>
             
-            <!-- Abstract Grid Lines -->
             <div class="absolute inset-0 abstract-grid opacity-[0.03]"></div>
         </div>
 
@@ -98,7 +96,6 @@
                 Something is taking shape in the void. A new paradigm for digital presence and physical connectivity is being engineered.
             </p>
 
-            <!-- Countdown Engine -->
             <div class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-16 w-full px-2">
                 <div class="glass flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl border border-white/5 relative overflow-hidden group">
                     <div class="absolute inset-0 bg-gradient-to-t from-poly-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -155,7 +152,7 @@
 
     </div>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js?v=2"></script>
 </body>
 
 </html>
