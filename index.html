@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyNode - Cinematic Confessions</title>
+    <title>PolyNode | Initialization</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,43 +12,22 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="icon" type="image/png" href="./assets/logo.png">
 
-    <meta name="title" content="PolyNode | Cinematic Anonymous Confessions Platform">
-    <meta name="description"
-        content="The first privacy-focused 'Confessions' platform that transforms anonymous messages into high-end Instagram stories using a serverless rendering engine.">
-    <meta name="keywords"
-        content="PolyNode, Anonymous Confessions, Instagram Stories, Privacy, Social Media, Java, Serverless, Automation, Rendering Engine, PolyNode.link">
+    <meta name="title" content="PolyNode | System Architecting in Progress">
+    <meta name="description" content="Redefining the bridge between bits and atoms. Something is taking shape in the void.">
+    <meta name="keywords" content="PolyNode, Infrastructure, Ecosystem, Connectivity, Architecture, Java">
     <link rel="canonical" href="https://polynode.link/">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://polynode.link/">
-    <meta property="og:title" content="PolyNode | Cinematic Anonymous Confessions Platform">
-    <meta property="og:description"
-        content="Transform your secrets into cinematic stories. PolyNode offers zero-trace anonymous submissions with automated high-end visual rendering.">
+    <meta property="og:title" content="PolyNode | System Architecting in Progress">
+    <meta property="og:description" content="Redefining the bridge between bits and atoms. Something is taking shape in the void.">
     <meta property="og:image" content="https://polynode.link/assets/og-image.jpeg">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://polynode.link/">
-    <meta property="twitter:title" content="PolyNode | Cinematic Anonymous Confessions Platform">
-    <meta property="twitter:description"
-        content="Transform your secrets into cinematic stories. PolyNode offers zero-trace anonymous submissions with automated high-end visual rendering.">
+    <meta property="twitter:title" content="PolyNode | System Architecting in Progress">
+    <meta property="twitter:description" content="Redefining the bridge between bits and atoms. Something is taking shape in the void.">
     <meta property="twitter:image" content="https://polynode.link/assets/og-image.jpeg">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "PolyNode",
-      "alternateName": "PolyNode.link",
-      "url": "https://polynode.link",
-      "description": "The first privacy-focused 'Confessions' platform that transforms anonymous messages into high-end Instagram stories using a serverless rendering engine.",
-      "author": {
-        "@type": "Person",
-        "name": "serqux",
-        "alternateName": "a8kj7sea",
-        "url": "https://github.com/PolyNode-Link"
-      }
-    }
-    </script>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,160 +52,25 @@
 
 <body class="antialiased">
 
-    <div id="app" class="relative min-h-screen flex flex-col items-center justify-between p-6">
+    <div id="app" class="relative min-h-screen flex flex-col items-center justify-between p-4 sm:p-6 overflow-hidden">
 
-        <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-            <div v-for="item in floatingItems" :key="item.id" class="floating-container" :style="{
-                 left: item.left + '%',
-                 '--rot': item.rot + 'deg',
-                 '--scale': item.scale,
-                 '--duration': item.duration + 's'
-             }">
-
-                <svg v-if="item.type === 'light'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920"
-                    width="1080" height="1920" class="w-full h-full drop-shadow-2xl">
-                    <defs>
-                        <filter :id="'box-shadow-batik-' + item.id" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur in="SourceAlpha" stdDeviation="20" result="blur" />
-                            <feOffset in="blur" dx="0" dy="20" result="offsetBlur" />
-                            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
-                                <feFuncA type="linear" slope="0.1" />
-                            </feComponentTransfer>
-                            <feMerge>
-                                <feMergeNode in="shadowAlpha" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-
-                        <linearGradient :id="'primary-gradient-' + item.id" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#a5b4fc" />
-                            <stop offset="50%" stop-color="#c4b5fd" />
-                            <stop offset="100%" stop-color="#f9a8d4" />
-                        </linearGradient>
-
-                        <pattern :id="'header-pattern-' + item.id" width="100" height="100"
-                            patternUnits="userSpaceOnUse">
-                            <path
-                                d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM85 52c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z"
-                                fill="#ffffff" fill-opacity="0.15" fill-rule="evenodd" />
-                        </pattern>
-                    </defs>
-
-                    <rect width="1080" height="1920" fill="#ffffff" />
-
-                    <g id="header" opacity="0.95">
-                        <rect width="1080" height="730" :fill="'url(#primary-gradient-' + item.id + ')'" />
-                        <rect width="1080" height="730" :fill="'url(#header-pattern-' + item.id + ')'" />
-                    </g>
-
-                    <text x="540" y="320" font-family="sans-serif" font-size="115" font-weight="800" fill="#ffffff"
-                        text-anchor="middle" letter-spacing="-3">
-                        {{ item.header }}
-                    </text>
-
-                    <g id="pill" transform="translate(540, 420)">
-                        <rect x="-175" y="-38" width="350" height="76" rx="38" fill="#ffffff" fill-opacity="0.3" />
-                        <text x="0" y="5" font-family="monospace" font-size="34" font-weight="700" fill="#ffffff"
-                            text-anchor="middle" dominant-baseline="middle">
-                            {{ item.pill }}
-                        </text>
-                    </g>
-
-                    <path d="M 0 720 A 90 90 0 0 1 90 630 L 990 630 A 90 90 0 0 1 1080 720 L 1080 1920 L 0 1920 Z"
-                        fill="#ffffff" />
-
-                    <g id="message-box" transform="translate(65, 825)"
-                        :filter="'url(#box-shadow-batik-' + item.id + ')'">
-                        <rect width="950" height="750" rx="60" fill="#a77fc0" fill-opacity="0.22" />
-
-                        <foreignObject x="50" y="50" width="850" height="650">
-                            <div xmlns="http://www.w3.org/1999/xhtml"
-                                style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: sans-serif; font-size: 64px; font-weight: 700; color: #1e293b; line-height: 1.3;">
-                                {{ item.message }}
-                            </div>
-                        </foreignObject>
-                    </g>
-                </svg>
-
-                <svg v-else xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920"
-                    class="w-full h-full drop-shadow-2xl">
-                    <defs>
-                        <filter :id="'dark-box-shadow-' + item.id" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur in="SourceAlpha" stdDeviation="30" result="blur" />
-                            <feOffset in="blur" dx="0" dy="30" result="offsetBlur" />
-                            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
-                                <feFuncA type="linear" slope="0.4" />
-                            </feComponentTransfer>
-                            <feMerge>
-                                <feMergeNode in="shadowAlpha" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-
-                        <filter :id="'dark-text-shadow-' + item.id" x="-10%" y="-10%" width="120%" height="120%">
-                            <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />
-                            <feOffset in="blur" dx="0" dy="5" result="offsetBlur" />
-                            <feComponentTransfer in="offsetBlur" result="shadowAlpha">
-                                <feFuncA type="linear" slope="0.3" />
-                            </feComponentTransfer>
-                            <feMerge>
-                                <feMergeNode in="shadowAlpha" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-
-                        <linearGradient :id="'primary-gradient-' + item.id" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#6366f1" />
-                            <stop offset="50%" stop-color="#a855f7" />
-                            <stop offset="100%" stop-color="#ec4899" />
-                        </linearGradient>
-
-                        <pattern :id="'header-pattern-' + item.id" width="100" height="100"
-                            patternUnits="userSpaceOnUse">
-                            <path
-                                d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM85 52c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z"
-                                fill="#ffffff" fill-opacity="0.15" fill-rule="evenodd" />
-                        </pattern>
-                    </defs>
-
-                    <rect width="1080" height="1920" fill="#1e293b" />
-
-                    <g id="header">
-                        <rect width="1080" height="730" :fill="'url(#primary-gradient-' + item.id + ')'" />
-                        <rect width="1080" height="730" :fill="'url(#header-pattern-' + item.id + ')'" />
-                    </g>
-
-                    <text x="540" y="320" font-family="sans-serif" font-size="115" font-weight="800" fill="#ffffff"
-                        text-anchor="middle" letter-spacing="-3" :filter="'url(#dark-text-shadow-' + item.id + ')'">
-                        {{ item.header }}
-                    </text>
-
-                    <g id="pill" transform="translate(540, 420)">
-                        <rect x="-175" y="-38" width="350" height="76" rx="38" fill="#000000" fill-opacity="0.25" />
-                        <text x="0" y="5" font-family="monospace" font-size="34" font-weight="700" fill="#ffffff"
-                            text-anchor="middle" dominant-baseline="middle">
-                            {{ item.pill }}
-                        </text>
-                    </g>
-
-                    <path d="M 0 720 A 90 90 0 0 1 90 630 L 990 630 A 90 90 0 0 1 1080 720 L 1080 1920 L 0 1920 Z"
-                        fill="#1e293b" />
-
-                    <g id="message-box" transform="translate(65, 825)"
-                        :filter="'url(#dark-box-shadow-' + item.id + ')'">
-                        <rect width="950" height="750" rx="60" fill="#0f172a" stroke="#ffffff" stroke-opacity="0.03"
-                            stroke-width="2" />
-
-                        <foreignObject x="50" y="50" width="850" height="650">
-                            <div xmlns="http://www.w3.org/1999/xhtml"
-                                style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: sans-serif; font-size: 64px; font-weight: 700; color: #f8fafc; line-height: 1.3;">
-                                {{ item.message }}
-                            </div>
-                        </foreignObject>
-                    </g>
-                </svg>
-
+        <!-- Abstract Geometric Narrative Background -->
+        <div class="fixed inset-0 pointer-events-none z-0">
+            <div v-for="node in floatingNodes" :key="node.id" 
+                 class="absolute rounded-full mix-blend-screen filter blur-3xl opacity-20 floating-node"
+                 :style="{
+                     left: node.x + '%',
+                     top: node.y + '%',
+                     width: node.size + 'px',
+                     height: node.size + 'px',
+                     backgroundColor: node.color,
+                     animationDuration: node.duration + 's',
+                     animationDelay: node.delay + 's'
+                 }">
             </div>
+            
+            <!-- Abstract Grid Lines -->
+            <div class="absolute inset-0 abstract-grid opacity-[0.03]"></div>
         </div>
 
         <header class="w-full max-w-5xl flex justify-between items-center z-10 py-4">
@@ -234,71 +78,79 @@
                 <img src="./assets/logo.png" alt="PolyNode Logo" class="w-8 h-8">
                 <span class="font-bold text-xl tracking-tighter">PolyNode.link</span>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-poly-muted">
-                <a href="#" class="hover:text-white transition-colors">Documentation</a>
-                <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                <a href="#" class="hover:text-white transition-colors">Open Source</a>
-            </div>
         </header>
 
-        <main class="z-10 flex flex-col items-center text-center max-w-3xl mt-20">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-white/10 text-[10px] uppercase tracking-widest font-bold text-poly-accent mb-6">
+        <main class="z-10 flex flex-col items-center text-center max-w-4xl mt-12 md:mt-16 w-full">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold text-poly-accent mb-8">
                 <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-poly-accent opacity="
-                        75"></span>
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-poly-accent opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-poly-accent"></span>
                 </span>
-                Automated Pipeline Live
+                System Architecture in Progress
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
-                Your secrets, <br />
-                <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-poly-accent to-poly-accent2">Cinematically
-                    Delivered.</span>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter mb-6 leading-tight">
+                The bridge between <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-poly-accent to-poly-accent2">Bits and Atoms.</span>
             </h1>
 
-            <p class="text-lg md:text-xl text-poly-muted mb-10 max-w-2xl leading-relaxed font-medium">
-                The first privacy-focused "Confessions" platform that transforms anonymous messages into high-end
-                Instagram stories using a serverless rendering engine.
+            <p class="text-base sm:text-lg md:text-xl text-poly-muted mb-12 max-w-2xl leading-relaxed font-medium px-4">
+                Something is taking shape in the void. A new paradigm for digital presence and physical connectivity is being engineered.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                <button class="btn-premium px-10 py-4 rounded-2xl font-bold text-poly-bg text-lg">
-                    Try PolyNode Now
-                </button>
-                <a href="https://github.com/PolyNode-Link" target="_blank"
-                    class="glass px-10 py-4 rounded-2xl font-bold text-white text-lg border border-white/10 hover:bg-white/5 transition-all inline-flex items-center justify-center">
-                    View GitHub
-                </a>
+            <!-- Countdown Engine -->
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-16 w-full px-2">
+                <div class="glass flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl border border-white/5 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-poly-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1" v-cloak>{{ months }}</span>
+                    <span class="text-[8px] sm:text-[9px] md:text-[10px] text-poly-muted uppercase tracking-widest font-semibold">Months</span>
+                </div>
+                
+                <div class="glass flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl border border-white/5 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-poly-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1" v-cloak>{{ days }}</span>
+                    <span class="text-[8px] sm:text-[9px] md:text-[10px] text-poly-muted uppercase tracking-widest font-semibold">Days</span>
+                </div>
+
+                <div class="glass flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl border border-white/5 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-poly-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1" v-cloak>{{ hours }}</span>
+                    <span class="text-[8px] sm:text-[9px] md:text-[10px] text-poly-muted uppercase tracking-widest font-semibold">Hours</span>
+                </div>
+
+                <div class="glass flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl border border-white/5 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-poly-accent2/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-poly-accent mb-1" v-cloak>{{ minutes }}</span>
+                    <span class="text-[8px] sm:text-[9px] md:text-[10px] text-poly-muted uppercase tracking-widest font-semibold">Minutes</span>
+                </div>
+
+                <div class="glass flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl border border-poly-accent2/20 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-poly-accent2/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-poly-accent2 mb-1 animate-pulse" v-cloak>{{ seconds }}</span>
+                    <span class="text-[8px] sm:text-[9px] md:text-[10px] text-poly-accent2 uppercase tracking-widest font-semibold">Seconds</span>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24">
-                <div class="glass p-6 rounded-3xl text-left border border-white/5">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-4">🔒</div>
-                    <h3 class="font-bold mb-2">Zero-Trace</h3>
-                    <p class="text-sm text-poly-muted leading-relaxed">Encrypted submissions. No databases, no tracking.
-                        Only art remains.</p>
-                </div>
-                <div class="glass p-6 rounded-3xl text-left border border-white/5">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-4">🎬</div>
-                    <h3 class="font-bold mb-2">Satori Engine</h3>
-                    <p class="text-sm text-poly-muted leading-relaxed">Java-based orchestrator renders
-                        professional-grade visuals in milliseconds.</p>
-                </div>
-                <div class="glass p-6 rounded-3xl text-left border border-white/5">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-4">🤖</div>
-                    <h3 class="font-bold mb-2">Auto-Publish</h3>
-                    <p class="text-sm text-poly-muted leading-relaxed">Automated pipeline from submission to social
-                        media story distribution.</p>
-                </div>
+            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xl justify-center px-4">
+                <a href="https://github.com/PolyNode-Link" target="_blank"
+                    class="glass w-full sm:w-auto flex-1 px-8 sm:px-10 py-4 rounded-2xl font-bold text-white text-base sm:text-lg border border-white/10 hover:bg-white/5 hover:border-poly-accent/30 transition-all inline-flex items-center justify-center gap-2.5 tracking-wide">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                    Trace the Protocol
+                </a>
+                <a href="https://discord.gg/YYp7gj9kft" target="_blank"
+                    class="glass w-full sm:w-auto flex-1 px-8 sm:px-10 py-4 rounded-2xl font-bold text-poly-accent text-base sm:text-lg border border-poly-accent/20 hover:bg-poly-accent/5 hover:border-poly-accent/40 transition-all inline-flex items-center justify-center gap-2.5 tracking-wide">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    Join the Network
+                </a>
             </div>
         </main>
 
-        <footer class="z-10 w-full flex justify-center py-10 opacity-40 hover:opacity-100 transition-opacity">
-            <p class="text-xs font-medium tracking-widest uppercase">Built for Performance • by serqux <b>(aka
-                    `a8kj7sea`)</b> • 2026</p>
+        <footer class="z-10 w-full flex justify-center py-8 sm:py-10 opacity-40 hover:opacity-100 transition-opacity">
+            <p class="text-[10px] sm:text-xs font-medium tracking-widest uppercase text-center">Built for Performance • by serqux <b>(aka `a8kj7sea`)</b> • 2026</p>
         </footer>
 
     </div>
