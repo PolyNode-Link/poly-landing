@@ -1,35 +1,55 @@
 body {
     background-color: #05050A;
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(58, 123, 213, 0.12) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(0, 210, 255, 0.12) 0px, transparent 50%);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(58, 123, 213, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 210, 255, 0.08) 0px, transparent 50%);
     color: #E2E8F0;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 .glass {
-    background: rgba(11, 11, 20, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(11, 11, 20, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes floatUpward {
-    0% { transform: translateY(110vh) rotate(var(--rot)) scale(var(--scale)); opacity: 0; }
-    15% { opacity: 0.4; }
-    85% { opacity: 0.4; }
-    100% { transform: translateY(-20vh) rotate(var(--rot)) scale(var(--scale)); opacity: 0; }
+.abstract-grid {
+    background-size: 50px 50px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 1) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
-.floating-container {
-    position: fixed;
-    pointer-events: none;
-    z-index: 0;
-    animation: floatUpward var(--duration) linear forwards;
-    width: 280px;
-    height: 497px;
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.floating-node {
+    animation: drift ease-in-out infinite alternate;
 }
 
 .btn-premium {
